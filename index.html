@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<link>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    p {
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+    }
+</style>
+<link href='stylesheet.css' rel='stylesheet' type='text/css'>
+</head>
+<body style="padding-top: 40vh; position: relative; background: black; background-position: center; background-size: cover; background-repeat: no-repeat; height: 100vh">
+<h1 style=" font-family: Arial; font-weight: 100;margin-bottom: 30px;font-size: 22px; color: green; text-align: center">Настя, ты приедешь через:</h1>
+<p id="demo" style="font-family: 'digital-7regular'; font-size: 50px; color: forestgreen">
+    <span id="days"></span>
+    <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Дней</span>
+    <span id="hours"></span>
+    <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Часов</span>
+    <span id="minutes"></span>
+    <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Минут</span>
+    <span id="seconds" style="color: forestgreen"></span>
+    <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Секунд</span>
+</p>
+<img src="owl.png" style="width: 200px; position: absolute; top: 0;">
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jun 30, 2018 06:25:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+    }, 1000);
+</script>
+
+</body>
+</html>
